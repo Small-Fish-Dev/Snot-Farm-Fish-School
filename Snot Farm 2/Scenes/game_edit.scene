@@ -1,0 +1,360 @@
+{
+  "Id": "2bdf7c47-f158-4603-9e02-1b5f11a9120c",
+  "GameObjects": [
+    {
+      "Id": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
+      "Name": "Sun",
+      "Rotation": "-0.0000000377291,0.6329893,0.0000000000000005185386,0.774161",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "DirectionalLight",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Shadows": true,
+          "SkyColor": "0.05882,0.07451,0.08235,1"
+        }
+      ]
+    },
+    {
+      "Id": "00344a8c-fa5e-45ae-b12a-10bb781a1dc3",
+      "Name": "2D Skybox",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SkyBox2D",
+          "SkyMaterial": "materials/skybox/light_test_sky_sunny02.vmat",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "EnvmapProbe",
+          "Bounds": {
+            "Mins": "-512,-512,-512",
+            "Maxs": "512,512,512"
+          },
+          "Feathering": 0.02,
+          "Projection": "Sphere",
+          "Texture": "textures/cubemaps/default2.vtex",
+          "TintColor": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "6ad70641-3c6c-4402-9c85-9a4969af4764",
+      "Name": "Plane",
+      "Scale": "3,3,3",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": "materials/dev/dev_metal_rough50.vmat",
+          "Model": "models/dev/plane.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "Center": "0,0,-7.499998",
+          "IsTrigger": false,
+          "Scale": "101.1,104.8999,16.30003",
+          "Static": false,
+          "Surface": null
+        }
+      ]
+    },
+    {
+      "Id": "3c2490ef-54a0-49bb-8f13-490e40aa51d1",
+      "Name": "Cube",
+      "Position": "0.2314864,70.71445,16.12591",
+      "Rotation": "-0.0000002023042,0.0000007766417,0.3089674,0.9510726",
+      "Scale": "0.5632889,0.5632889,0.5632889",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": "materials/dev/dev_metal_rough20.vmat",
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "MyComponent",
+          "StringProperty": null
+        },
+        {
+          "__type": "BoxCollider",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "Rigidbody",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ]
+    },
+    {
+      "Id": "e625baec-e62e-45e6-8ad1-486ee486c412",
+      "Name": "Cube (1)",
+      "Position": "-62.78058,28.28045,16.12599",
+      "Rotation": "0.00000007115104,0.0000002544248,0.2549103,0.9669648",
+      "Scale": "0.5632889,0.5632889,0.5632889",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": "materials/dev/dev_metal_rough20.vmat",
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "MyComponent",
+          "StringProperty": null
+        },
+        {
+          "__type": "BoxCollider",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "Rigidbody",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ]
+    },
+    {
+      "Id": "cf122172-da3a-46ee-8ac2-645c16ef0b89",
+      "Name": "Cube (2)",
+      "Position": "-27.83003,49.07653,21.63396",
+      "Rotation": "-0.09267154,0.2828564,0.2972321,0.9072251",
+      "Scale": "0.5632889,0.5632889,0.5632889",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": "materials/dev/dev_metal_rough20.vmat",
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "MyComponent",
+          "StringProperty": null
+        },
+        {
+          "__type": "BoxCollider",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "Rigidbody",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ]
+    },
+    {
+      "Id": "324778a4-a081-420e-9ce1-12024138940b",
+      "Name": "Cube (3)",
+      "Position": "-38.0148,34.40792,46.93516",
+      "Rotation": "-0.3346329,0.1915644,0.3623908,0.8485262",
+      "Scale": "0.5632889,0.5632889,0.5632889",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": "materials/dev/dev_metal_rough20.vmat",
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "MyComponent",
+          "StringProperty": null
+        },
+        {
+          "__type": "BoxCollider",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "Rigidbody",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ]
+    },
+    {
+      "Id": "c89bd697-53e3-481a-a62f-a9bc729dbe18",
+      "Name": "Cube (4)",
+      "Position": "-36.60967,110.737,16.12588",
+      "Rotation": "-0.351859,0.6133476,0.3518587,0.6133478",
+      "Scale": "0.5632889,0.5632889,0.5632889",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": "materials/dev/dev_metal_rough20.vmat",
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "MyComponent",
+          "StringProperty": null
+        },
+        {
+          "__type": "BoxCollider",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "Rigidbody",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ]
+    },
+    {
+      "Id": "fb85a748-1bad-4cee-a369-335c4a429a83",
+      "Name": "Cube (5)",
+      "Position": "-86.09607,103.3529,16.12597",
+      "Rotation": "-0.6939179,0.1359338,-0.6939179,-0.1359341",
+      "Scale": "0.5632889,0.5632889,0.5632889",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": "materials/dev/dev_metal_rough20.vmat",
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "MyComponent",
+          "StringProperty": null
+        },
+        {
+          "__type": "BoxCollider",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "Rigidbody",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ]
+    },
+    {
+      "Id": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
+      "Name": "Camera",
+      "Position": "-126.413,-288,242.1943",
+      "Rotation": "-0.1817253,0.2852514,0.5056354,0.7936879",
+      "Scale": "1,1,0.9044146",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "CameraComponent",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 70.06,
+          "IsMainCamera": true,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 10000,
+          "ZNear": 10
+        },
+        {
+          "__type": "Blur",
+          "Size": 0.52
+        },
+        {
+          "__type": "FilmGrain",
+          "Intensity": 1.0000005,
+          "Response": 0.5
+        },
+        {
+          "__type": "Sharpen",
+          "Scale": 5
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 60,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true
+  },
+  "Title": "minimal",
+  "Description": "",
+  "__references": []
+}

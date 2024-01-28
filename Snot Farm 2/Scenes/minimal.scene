@@ -1,4 +1,5 @@
 {
+  "Id": "2bdf7c47-f158-4603-9e02-1b5f11a9120c",
   "GameObjects": [
     {
       "Id": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
@@ -8,7 +9,8 @@
       "Components": [
         {
           "__type": "DirectionalLight",
-          "__enabled": true,
+          "FogMode": "Enabled",
+          "FogStrength": 1,
           "LightColor": "0.91373,0.98039,1,1",
           "Shadows": true,
           "SkyColor": "0.05882,0.07451,0.08235,1"
@@ -22,17 +24,16 @@
       "Components": [
         {
           "__type": "SkyBox2D",
-          "__enabled": true,
           "SkyMaterial": "materials/skybox/light_test_sky_sunny02.vmat",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "EnvmapProbe",
-          "__enabled": true,
           "Bounds": {
             "Mins": "-512,-512,-512",
             "Maxs": "512,512,512"
           },
+          "Feathering": 0.02,
           "Projection": "Sphere",
           "Texture": "textures/cubemaps/default2.vtex",
           "TintColor": "1,1,1,1"
@@ -47,11 +48,11 @@
       "Components": [
         {
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": "materials/dev/dev_metal_rough50.vmat",
           "Model": "models/dev/plane.vmdl",
-          "ShouldCastShadows": true,
+          "RenderType": "On",
           "Tint": "1,1,1,1"
         }
       ]
@@ -66,38 +67,57 @@
       "Components": [
         {
           "__type": "ModelRenderer",
-          "__enabled": true,
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
           "MaterialOverride": "materials/dev/dev_metal_rough20.vmat",
           "Model": "models/dev/box.vmdl",
-          "ShouldCastShadows": true,
+          "RenderType": "On",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "MyComponent",
-          "__enabled": true,
           "StringProperty": null
+        },
+        {
+          "__type": "BoxCollider",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "Rigidbody",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
         }
       ]
     },
     {
       "Id": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
       "Name": "Camera",
-      "Position": "-116.9319,-243.2814,254.4213",
-      "Rotation": "-0.2056158,0.322752,0.4964002,0.7791919",
+      "Position": "-126.413,-288,242.1943",
+      "Rotation": "-0.1817253,0.2852514,0.5056354,0.7936879",
+      "Scale": "1,1,0.9044146",
       "Enabled": true,
       "Components": [
         {
           "__type": "CameraComponent",
-          "__enabled": true,
           "BackgroundColor": "0.33333,0.46275,0.52157,1",
           "ClearFlags": "All",
-          "FieldOfView": 60,
+          "FieldOfView": 70.06,
+          "IsMainCamera": true,
           "Orthographic": false,
           "OrthographicHeight": 1204,
+          "Priority": 1,
           "RenderExcludeTags": "",
           "RenderTags": "",
           "TargetEye": "None",
+          "Viewport": "0,0,1,1",
           "ZFar": 10000,
           "ZNear": 10
         }
@@ -105,13 +125,13 @@
     }
   ],
   "SceneProperties": {
+    "FixedUpdateFrequency": 50,
     "Lerping": true,
-    "UseFixedUpdate": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 60,
     "ThreadedAnimation": true,
     "TimeScale": 1,
-    "MaxFixedUpdates": 5,
-    "FixedUpdateFrequency": 50,
-    "NetworkFrequency": 60
+    "UseFixedUpdate": true
   },
   "Title": "minimal",
   "Description": "",
