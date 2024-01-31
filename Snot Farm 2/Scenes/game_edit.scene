@@ -1,5 +1,5 @@
 {
-  "Id": "2bdf7c47-f158-4603-9e02-1b5f11a9120c",
+  "Id": "e073d619-92a9-44e2-9ffb-c232a59b236a",
   "GameObjects": [
     {
       "Id": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
@@ -306,41 +306,98 @@
       ]
     },
     {
-      "Id": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
-      "Name": "Camera",
-      "Position": "-126.413,-288,242.1943",
-      "Rotation": "-0.1817253,0.2852514,0.5056354,0.7936879",
-      "Scale": "1,1,0.9044146",
+      "Id": "e5dd1fa1-d6ea-4239-a1fb-bbbaf801b119",
+      "Name": "Player",
+      "Position": "-136.9728,-229.7931,135.917",
+      "Rotation": "0,0,-0.7071068,0.7071068",
       "Enabled": true,
       "Components": [
         {
-          "__type": "CameraComponent",
-          "BackgroundColor": "0.33333,0.46275,0.52157,1",
-          "ClearFlags": "All",
-          "FieldOfView": 70.06,
-          "IsMainCamera": true,
-          "Orthographic": false,
-          "OrthographicHeight": 1204,
-          "Priority": 1,
-          "RenderExcludeTags": "",
-          "RenderTags": "",
-          "TargetEye": "None",
-          "Viewport": "0,0,1,1",
-          "ZFar": 10000,
-          "ZNear": 10
+          "__type": "SkinnedModelRenderer",
+          "BodyGroups": 341,
+          "BoneMergeTarget": null,
+          "CreateBoneObjects": false,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/citizen/citizen.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
         },
         {
-          "__type": "Blur",
-          "Size": 0.52
+          "__type": "CharacterController",
+          "Acceleration": 10,
+          "GroundAngle": 45,
+          "Height": 64,
+          "IgnoreLayers": "",
+          "Radius": 16,
+          "StepHeight": 18
         },
         {
-          "__type": "FilmGrain",
-          "Intensity": 1.0000005,
-          "Response": 0.5
+          "__type": "CitizenAnimationHelper",
+          "BodyWeight": 1,
+          "EyeSource": null,
+          "EyesWeight": 1,
+          "HeadWeight": 1,
+          "Height": 1,
+          "IkLeftFoot": null,
+          "IkLeftHand": null,
+          "IkRightFoot": null,
+          "IkRightHand": null,
+          "LookAt": null,
+          "LookAtEnabled": false,
+          "Target": {
+            "_type": "component",
+            "go": "e5dd1fa1-d6ea-4239-a1fb-bbbaf801b119",
+            "component_type": "SkinnedModelRenderer"
+          }
         },
         {
-          "__type": "Sharpen",
-          "Scale": 5
+          "__type": "SnotPlayer",
+          "Animator": {
+            "_type": "component",
+            "go": "e5dd1fa1-d6ea-4239-a1fb-bbbaf801b119",
+            "component_type": "CitizenAnimationHelper"
+          },
+          "Camera": {
+            "_type": "gameobject",
+            "go": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a"
+          },
+          "Controller": {
+            "_type": "component",
+            "go": "e5dd1fa1-d6ea-4239-a1fb-bbbaf801b119",
+            "component_type": "CharacterController"
+          },
+          "JumpStrength": 400,
+          "RunSpeed": 250,
+          "WalkSpeed": 120
+        }
+      ],
+      "Children": [
+        {
+          "Id": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
+          "Name": "Camera",
+          "Position": "-128.3728,0,94.07643",
+          "Rotation": "0,0.1305262,0,0.9914451",
+          "Scale": "1,1,0.9044146",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "CameraComponent",
+              "BackgroundColor": "0.33333,0.46275,0.52157,1",
+              "ClearFlags": "All",
+              "FieldOfView": 70.06,
+              "IsMainCamera": true,
+              "Orthographic": false,
+              "OrthographicHeight": 1204,
+              "Priority": 1,
+              "RenderExcludeTags": "",
+              "RenderTags": "",
+              "TargetEye": "None",
+              "Viewport": "0,0,1,1",
+              "ZFar": 10000,
+              "ZNear": 10
+            }
+          ]
         }
       ]
     }
@@ -356,5 +413,6 @@
   },
   "Title": "minimal",
   "Description": "",
+  "LastSaved": "2024-01-31T18:55:32.55\u002B01:00",
   "__references": []
 }
