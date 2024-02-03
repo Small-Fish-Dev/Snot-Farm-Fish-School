@@ -308,7 +308,7 @@
     {
       "Id": "e5dd1fa1-d6ea-4239-a1fb-bbbaf801b119",
       "Name": "Player",
-      "Position": "-136.9728,-229.7931,135.917",
+      "Position": "-0.7203827,-40.62713,45.63123",
       "Rotation": "0,0,-0.7071068,0.7071068",
       "Enabled": true,
       "Components": [
@@ -326,6 +326,7 @@
         {
           "__type": "CharacterController",
           "Acceleration": 10,
+          "Bounciness": 0.3,
           "GroundAngle": 45,
           "Height": 64,
           "IgnoreLayers": "",
@@ -367,6 +368,7 @@
             "go": "e5dd1fa1-d6ea-4239-a1fb-bbbaf801b119",
             "component_type": "CharacterController"
           },
+          "EyePosition": "0,0,60.09998",
           "JumpStrength": 400,
           "RunSpeed": 250,
           "WalkSpeed": 120
@@ -409,10 +411,22 @@
     "NetworkFrequency": 60,
     "ThreadedAnimation": true,
     "TimeScale": 1,
-    "UseFixedUpdate": true
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-01-31T18:55:32.55\u002B01:00",
+  "LastSaved": "2024-02-03T12:33:23.2886255\u002B01:00",
   "__references": []
 }
