@@ -81,7 +81,6 @@ public sealed class SnotPlayer : Component
 
 			if ( Input.Pressed( "Jump" ) )
 			{
-				Controller.Acceleration = 5f;
 				Controller.Punch( Vector3.Up * JumpStrength );
 
 				if ( Animator != null )
@@ -90,6 +89,7 @@ public sealed class SnotPlayer : Component
 		}
 		else
 		{
+			Controller.Acceleration = 5f;
 			Controller.Velocity += Scene.PhysicsWorld.Gravity * Time.Delta;
 		}
 
