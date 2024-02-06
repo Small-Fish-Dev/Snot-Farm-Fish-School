@@ -44,8 +44,6 @@ public sealed class SnotPlayer : Component
 	[Property]
 	public Vector3 EyePosition { get; set; }
 
-	public Vector3 EyeWorldPosition => Transform.Local.PointToWorld( EyePosition );
-
 	public Angles EyeAngles { get; set; }
 	Transform _initialCameraTransform;
 
@@ -62,18 +60,7 @@ public sealed class SnotPlayer : Component
 		Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
 
 		if ( Camera != null )
-		{
-			var cameraTransform = _initialCameraTransform.RotateAround( EyePosition, EyeAngles.WithYaw( 0f ) );
-			var cameraPosition = Transform.Local.PointToWorld( cameraTransform.Position );
-			var cameraTrace = Scene.Trace.Ray( EyeWorldPosition, cameraPosition )
-				.Size( 5f )
-				.IgnoreGameObjectHierarchy( GameObject )
-				.WithoutTags( "player" )
-				.Run();
-
-			Camera.Transform.Position = cameraTrace.EndPosition;
-			Camera.Transform.LocalRotation = cameraTransform.Rotation;
-		}
+			Camera.Transform.Local = _initialCameraTransform.RotateAround( EyePosition, EyeAngles.WithYaw( 0f ) );
 	}
 
 	protected override void OnFixedUpdate()
