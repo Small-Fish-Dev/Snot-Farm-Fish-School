@@ -1,0 +1,91 @@
+{
+  "Id": "41dbad1f-8c20-4bef-9820-6e097ae932bc",
+  "GameObjects": [
+    {
+      "Id": "5c84aaaa-6ae9-44bb-b0ce-e063683b69b8",
+      "Name": "Map",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "MapInstance",
+          "MapName": "maps/level_1.vmap",
+          "OnMapLoaded": null,
+          "OnMapUnloaded": null,
+          "UseMapFromLaunch": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "Id": "702b9d40-8cad-4915-b6dd-3ea49588e6dc",
+      "Name": "Sun",
+      "Rotation": "-0.0000000377291,0.6329893,0.0000000000000005185386,0.774161",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "DirectionalLight",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Shadows": true,
+          "SkyColor": "0.05882,0.07451,0.08235,1"
+        }
+      ]
+    },
+    {
+      "Id": "04c7da57-a5df-47ac-a6a6-2998e7beb571",
+      "Name": "2D Skybox",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SkyBox2D",
+          "SkyMaterial": "materials/skybox/light_test_sky_sunny02.vmat",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "EnvmapProbe",
+          "Bounds": {
+            "Mins": "-512,-512,-512",
+            "Maxs": "512,512,512"
+          },
+          "Feathering": 0.02,
+          "Projection": "Sphere",
+          "Texture": "textures/cubemaps/default2.vtex",
+          "TintColor": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "Id": "07e51f92-d8d4-4992-ba21-2a4690de22e7",
+      "Name": "Player",
+      "Position": "72.63182,-171.0352,64",
+      "Enabled": true,
+      "__Prefab": "prefabs/player.prefab"
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "level_1",
+  "Description": "",
+  "LastSaved": "2024-02-06T18:17:10.4762477\u002B01:00",
+  "__references": []
+}
