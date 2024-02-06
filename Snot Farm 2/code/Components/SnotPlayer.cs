@@ -44,6 +44,8 @@ public sealed class SnotPlayer : Component
 	[Property]
 	public Vector3 EyePosition { get; set; }
 
+	public Vector3 EyeWorldPosition => Transform.Local.PointToWorld( EyePosition );
+
 	public Angles EyeAngles { get; set; }
 	Transform _initialCameraTransform;
 
@@ -60,7 +62,18 @@ public sealed class SnotPlayer : Component
 		Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
 
 		if ( Camera != null )
-			Camera.Transform.Local = _initialCameraTransform.RotateAround( EyePosition, EyeAngles.WithYaw( 0f ) );
+		{
+			var cameraTransform = _initialCameraTransform.RotateAround( EyePosition, EyeAngles.WithYaw( 0f ) );
+			var cameraPosition = Transform.Local.PointToWorld( cameraTransform.Position );
+			var cameraTrace = Scene.Trace.Ray( EyeWorldPosition, cameraPosition )
+				.Size( 5f )
+				.IgnoreGameObjectHierarchy( GameObject )
+				.WithoutTags( "player" )
+				.Run();
+
+			Camera.Transform.Position = cameraTrace.EndPosition;
+			Camera.Transform.LocalRotation = cameraTransform.Rotation;
+		}
 	}
 
 	protected override void OnFixedUpdate()
@@ -77,7 +90,7 @@ public sealed class SnotPlayer : Component
 		if ( Controller.IsOnGround )
 		{
 			Controller.Acceleration = 10f;
-			Controller.ApplyFriction( 5f );
+			Controller.ApplyFriction( 5f, 20f );
 
 			if ( Input.Pressed( "Jump" ) )
 			{
