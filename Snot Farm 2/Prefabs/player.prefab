@@ -65,6 +65,11 @@
         "JumpStrength": 400,
         "RunSpeed": 250,
         "WalkSpeed": 120
+      },
+      {
+        "__type": "UnitInfo",
+        "MaxHealth": 5,
+        "Type": "Player"
       }
     ],
     "Children": [
