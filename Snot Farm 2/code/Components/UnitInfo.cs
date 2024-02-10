@@ -26,18 +26,43 @@ public sealed class UnitInfo : Component
 	[Property]
 	public UnitType Type { get; set; }
 
+	/// <summary>
+	/// Max health of the unit, clamps health from 0 to MaxHealth
+	/// </summary>
 	[Property]
+	[Range( 0.1f, 10f, 0.1f )]
 	public float MaxHealth { get; set; } = 5f;
+
+	/// <summary>
+	/// How many HP are regenerated each second out of combat
+	/// </summary>
+	[Property]
+	[Range( 0.1f, 2f, 0.1f )]
+	public float HealthRegenAmount { get; set; } = 0.5f;
+
+	/// <summary>
+	/// How many seconds out of combat before you start regenerating
+	/// </summary>
+	[Property]
+	[Range( 1f, 5f, 1f )]
+	public float HealthRegenTimer { get; set; } = 3f;
 
 	public float Health { get; private set; }
 	public bool Alive { get; private set; } = true;
 
-	public event Action<float> OnDamage;
-	public event Action OnDeath;
+	TimeSince _lastDamage;
+	TimeUntil _nextHeal;
 
 	protected override void OnUpdate()
 	{
-		Damage( Time.Delta );
+		if ( _lastDamage >= HealthRegenTimer && Health != MaxHealth )
+		{
+			if ( _nextHeal )
+			{
+				Damage( -HealthRegenAmount );
+				_nextHeal = 1f;
+			}
+		}
 	}
 
 	protected override void OnStart()
@@ -55,23 +80,21 @@ public sealed class UnitInfo : Component
 
 		Health = Math.Clamp( Health - damage, 0, MaxHealth );
 
-		OnDamage?.Invoke( damage );
+		if ( damage > 0 )
+			_lastDamage = 0;
 
 		if ( Health <= 0 )
 			Krill();
 	}
 
 	/// <summary>
-	/// Set HP to 0 and Alive to false
+	/// Set HP to 0 and Alive to false, then destroy it
 	/// </summary>
 	public void Krill()
 	{
 		Health = 0;
 		Alive = false;
 
-		OnDeath?.Invoke();
-
-		if ( OnDeath == null )
-			GameObject.Destroy();
+		GameObject.Destroy();
 	}
 }

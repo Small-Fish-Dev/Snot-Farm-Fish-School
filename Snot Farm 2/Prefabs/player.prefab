@@ -68,6 +68,8 @@
       },
       {
         "__type": "UnitInfo",
+        "HealthRegenAmount": 0.5,
+        "HealthRegenTimer": 3,
         "MaxHealth": 5,
         "Type": "Player"
       }
