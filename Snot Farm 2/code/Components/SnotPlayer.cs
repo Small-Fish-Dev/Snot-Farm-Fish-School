@@ -1,4 +1,5 @@
 using Sandbox.Citizen;
+using System.Net.Http;
 
 public sealed class SnotPlayer : Component
 {
@@ -55,7 +56,7 @@ public sealed class SnotPlayer : Component
 	public float PunchCooldown { get; set; } = 0.5f;
 
 	/// <summary>
-	/// How far away you can punch
+	/// How far away you can punch in Hammer Units
 	/// </summary>
 	[Property]
 	[Category( "Stats" )]
@@ -149,7 +150,6 @@ public sealed class SnotPlayer : Component
 
 		if ( Input.Pressed( "Punch" ) && _lastPunch >= PunchCooldown )
 			Punch();
-
 	}
 
 	protected override void OnStart()
@@ -166,6 +166,7 @@ public sealed class SnotPlayer : Component
 
 	public void Punch()
 	{
+
 		if ( Animator != null )
 		{
 			Animator.HoldType = CitizenAnimationHelper.HoldTypes.Punch;

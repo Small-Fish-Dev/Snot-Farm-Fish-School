@@ -74,7 +74,7 @@
         "HealthRegenAmount": 0.5,
         "HealthRegenTimer": 3,
         "MaxHealth": 5,
-        "Team": "None"
+        "Team": "Player"
       }
     ],
     "Children": [
