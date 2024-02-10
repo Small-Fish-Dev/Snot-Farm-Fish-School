@@ -21,10 +21,11 @@ public enum UnitType
 	Snot
 }
 
+[Icon( "psychology" )]
 public sealed class UnitInfo : Component
 {
 	[Property]
-	public UnitType Type { get; set; }
+	public UnitType Team { get; set; }
 
 	/// <summary>
 	/// Max health of the unit, clamps health from 0 to MaxHealth
