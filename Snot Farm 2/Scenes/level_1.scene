@@ -61,6 +61,13 @@
       "Position": "16.44528,-273.153,64",
       "Enabled": true,
       "__Prefab": "prefabs/player.prefab"
+    },
+    {
+      "Id": "5ec758b8-4f56-4d0a-98ab-51a028e13444",
+      "Name": "snot",
+      "Position": "58.50688,-864.6287,-0.7159653",
+      "Enabled": true,
+      "__Prefab": "prefabs/snot.prefab"
     }
   ],
   "SceneProperties": {
@@ -86,6 +93,6 @@
   },
   "Title": "level_1",
   "Description": "",
-  "LastSaved": "2024-02-06T20:39:24.5115847\u002B01:00",
+  "LastSaved": "2024-02-10T18:31:04.4040061\u002B01:00",
   "__references": []
 }
