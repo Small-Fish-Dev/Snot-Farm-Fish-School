@@ -46,9 +46,20 @@ public sealed class UnitInfo : Component
 	[Range( 1f, 5f, 1f )]
 	public float HealthRegenTimer { get; set; } = 3f;
 
+	/// <summary>
+	/// How long to wait before destroying the game object after death
+	/// </summary>
+	[Property]
+	[Range( 0f, 2f, 0.1f )]
+	public float DelayDeath { get; set; } = 0f;
+
 	public float Health { get; private set; }
 
 	public bool Alive { get; private set; } = true;
+
+	public event Action<float> OnDamage;
+	public event Action OnDeath;
+
 	TimeSince _lastDamage;
 	TimeUntil _nextHeal;
 
@@ -82,6 +93,8 @@ public sealed class UnitInfo : Component
 		if ( damage > 0 )
 			_lastDamage = 0f;
 
+		OnDamage?.Invoke( damage );
+
 		if ( Health <= 0 )
 			Krill();
 	}
@@ -89,10 +102,14 @@ public sealed class UnitInfo : Component
 	/// <summary>
 	/// Set the HP to 0 and Alive to false, then destroys it
 	/// </summary>
-	public void Krill()
+	public async void Krill()
 	{
 		Health = 0f;
 		Alive = false;
+
+		OnDeath?.Invoke();
+
+		await Task.DelaySeconds( DelayDeath );
 
 		GameObject.Destroy();
 	}

@@ -6,6 +6,7 @@
     "Components": [
       {
         "__type": "UnitInfo",
+        "DelayDeath": 1,
         "HealthRegenAmount": 0.3,
         "HealthRegenTimer": 5,
         "MaxHealth": 3,
@@ -13,6 +14,7 @@
       },
       {
         "__type": "SkinnedModelRenderer",
+        "AnimationGraph": null,
         "BodyGroups": 18446744073709551615,
         "BoneMergeTarget": null,
         "CreateBoneObjects": false,
@@ -29,6 +31,19 @@
         "Radius": 50,
         "Static": false,
         "Surface": null
+      },
+      {
+        "__type": "SnotComponent",
+        "Info": {
+          "_type": "component",
+          "go": "a671b761-5f5d-47c3-bd49-b0bec95294f2",
+          "component_type": "UnitInfo"
+        },
+        "Model": {
+          "_type": "component",
+          "go": "a671b761-5f5d-47c3-bd49-b0bec95294f2",
+          "component_type": "SkinnedModelRenderer"
+        }
       }
     ],
     "Children": []
