@@ -7,6 +7,7 @@
     "Components": [
       {
         "__type": "SkinnedModelRenderer",
+        "AnimationGraph": null,
         "BodyGroups": 341,
         "BoneMergeTarget": null,
         "CreateBoneObjects": false,
