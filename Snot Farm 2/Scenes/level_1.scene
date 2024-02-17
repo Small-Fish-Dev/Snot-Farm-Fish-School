@@ -19,6 +19,7 @@
     {
       "Id": "3a4666a6-a88d-4fb4-85e1-1e8a96b41b5b",
       "Name": "2D Skybox",
+      "Tags": "skybox",
       "Enabled": true,
       "Components": [
         {
@@ -43,6 +44,7 @@
       "Id": "871f6991-477c-4ad3-9851-9e26a63be2a4",
       "Name": "Sun",
       "Rotation": "-0.0000000377291,0.6329893,0.0000000000000005185386,0.774161",
+      "Tags": "light_directional,light",
       "Enabled": true,
       "Components": [
         {
@@ -93,6 +95,6 @@
   },
   "Title": "level_1",
   "Description": "",
-  "LastSaved": "2024-02-10T18:31:04.4040061\u002B01:00",
+  "LastSaved": "2024-02-16T21:23:37.8679341\u002B01:00",
   "__references": []
 }

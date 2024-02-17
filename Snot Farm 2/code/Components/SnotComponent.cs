@@ -23,9 +23,10 @@ public sealed class SnotComponent : Component
 		if ( Model == null ) return;
 		if ( !Info.Alive ) return;
 
-		var scaledHealth = Info.Health / Info.MaxHealth * 100f;
 		var currentHealth = Model.GetFloat( "health" );
+		var scaledHealth = Info.Health / Info.MaxHealth * 100f;
 		var lerpedHealth = MathX.Lerp( currentHealth, scaledHealth, Time.Delta / 0.1f );
+
 		Model.Set( "health", lerpedHealth );
 	}
 
